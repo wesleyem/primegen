@@ -1,11 +1,14 @@
 # Prime Number Generator
 
+
+#### Prerequisite
+	$> sudo apt-get install libssl-dev
+
 #### Usage
 	$> gcc primegen.c -o primegen -lcrypto
 	$> ./primegen 10
-	Start: Mon Oct 28 18:30:01 2013
+	Start: Mon Oct 28 21:17:29 2013
 	The number below is prime
-	779617
-	End: Mon Oct 28 18:30:11 2013
-	Total time to perform entire program: 10.00 seconds
-
+	788153
+	End: Mon Oct 28 21:17:34 2013
+	Total time to perform entire program: 5.00 seconds

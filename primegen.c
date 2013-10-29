@@ -55,7 +55,7 @@ int primetest(BIGNUM *rand, BN_CTX *ctx) {
 int main(int argc, char *argv[])
 {
 	time_t start = time(NULL);
-	printf("\nStart: %s", ctime(&start));
+	printf("Start: %s", ctime(&start));
 	BN_CTX *ctx = BN_CTX_new();
 	size = atoi(argv[1]);
 	while (1) {
@@ -70,12 +70,12 @@ int main(int argc, char *argv[])
 		}
 		if (truecount == 10) {
 			if (BN_is_prime(rand, 10, NULL, ctx, NULL)) {
-				printf("\nThe number below is prime\n");
-				printf("\n%s\n", BN_bn2dec(rand));
+				printf("The number below is prime\n");
+				printf("%s\n", BN_bn2dec(rand));
 				BN_CTX_free(ctx);
 				time_t end = time(NULL);
-				printf("\nEnd: %s", ctime(&end));
-				printf("\nTotal time to perform entire program: %.2lf seconds\n\n", difftime(end,start));
+				printf("End: %s", ctime(&end));
+				printf("Total time to perform entire program: %.2lf seconds\n", difftime(end,start));
 				exit(1); // successful termination of the program. Generated prime WOOO!!!
 			} else {
 				// your really unlucky if it gets here. this means 
