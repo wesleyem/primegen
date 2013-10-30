@@ -1,7 +1,7 @@
 # Prime Number Generator
 
 
-#### Prerequisite
+#### Dependencies
 	$> sudo apt-get install libssl-dev
 
 #### Usage
