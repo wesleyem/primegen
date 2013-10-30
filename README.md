@@ -1,5 +1,6 @@
 # Prime Number Generator
 
+2^n bit prime number generator using the miller-rabin primality test.
 
 #### Dependencies
 	$> sudo apt-get install libssl-dev
