@@ -54,10 +54,22 @@ int primetest(BIGNUM *rand, BN_CTX *ctx) {
 
 int main(int argc, char *argv[])
 {
+	char num[6];
 	time_t start = time(NULL);
 	printf("Start: %s", ctime(&start));
 	BN_CTX *ctx = BN_CTX_new();
-	size = atoi(argv[1]);
+	if (argc == 1) {
+		if (fgets(num, 5, stdin) != NULL) {
+			sscanf(num, "%d", &size);
+		} else {
+			printf("%s\n", "Error handling stdin");
+		}
+	} else if (argc == 2) {
+		size = atoi(argv[1]);
+	} else {
+		printf("%s", "Invalid argument.\nUsage: $>primegen [number]");
+	}
+//	size = atoi(argv[1]);
 	while (1) {
 		BIGNUM *rand = BN_new(); // random BIGNUM to test: rand [modulus]
 		BN_rand(rand, size, 0, 1); // 1 in BN_rand for 4th arg makes the random number odd
